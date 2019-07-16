@@ -34,6 +34,12 @@ describe('function greetFactory',function() {
             object4.AddName('Hallo')
             assert.equal('Hallo',object4.getName())
         })
+
+        it('should count how many people greeted'), function(){
+            let object5 = greetFactory();
+            object5.counter('siya, sino. vovo,Loyd')
+            assert.equal('4',object5.getName())
+        }
 })
 
     

@@ -1,7 +1,8 @@
 function greetFactory() {
 
     let names =[];
-
+     let counter = 0;
+     
     function AddName(name) {
         names.push(name);
     }
@@ -29,6 +30,12 @@ function greetFactory() {
             return 'Hallo ' + name;
         }
 
+     function counter(){
+            count = Object.keys()
+                return count.length
+            
+        }
+
     }
 
 
@@ -36,6 +43,7 @@ function greetFactory() {
         AddName,
         setName,
         getName,
-        language
+        language,
+        counter
     };
 }
