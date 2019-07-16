@@ -16,14 +16,15 @@ function greetFactory() {
 
     
 
-    function language() {
-        if (lang.value === "English") {
-            
-            return "Hello " + name;
-        } else if (lang.value === "IsiXhosa") {
+    function language(name,lang) {
+        console.log(name);
+        console.log(lang);
+        if (lang == "English") {
+           return "Hello " + name;
+        }  if (lang == "IsiXhosa") {
             
             return "molo " + name;
-        } else if (lang.value === 'Afrikaans') {
+        } else if (lang == "Afrikaans") {
             
             return 'Hallo ' + name;
         }
