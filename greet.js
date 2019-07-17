@@ -18,8 +18,8 @@ function greetFactory() {
     
 
     function language(name,lang) {
-        console.log(name);
-        console.log(lang);
+        // console.log(name);
+        // console.log(lang);
         if (lang == "English") {
            return "Hello " + name;
         }  if (lang == "IsiXhosa") {
