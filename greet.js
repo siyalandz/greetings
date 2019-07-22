@@ -1,49 +1,66 @@
-function greetFactory() {
+function greetFactory(usersGreeted) {
 
-    let names =[];
-     let counter = 0;
-     
+
+
+    let names = usersGreeted || {};
+    counter = 0;
+
     function AddName(name) {
         names.push(name);
+     }
+
+     function setName() {
+
+     }
+
+    function getNames() {
+        return names;
     }
 
-    function setName() {
-    
-    }
 
-    function getName() {
-        return names[0];
-    }
 
-    
+    function language(name, lang) {
+        //  var MyName= name.chart(0).MyName()+ name.slice(1)
+        if (name !== '') {
+            if (names[name] === undefined) {
+                names[name] = 0;
+            }else{
+                names[name]++;
+            }
 
-    function language(name,lang) {
-        // console.log(name);
-        // console.log(lang);
-        if (lang == "English") {
-           return "Hello " + name;
-        }  if (lang == "IsiXhosa") {
-            
-            return "molo " + name;
-        } else if (lang == "Afrikaans") {
-            
-            return 'Hallo ' + name;
+            if (lang == "English") {
+                return "Hello " + name;
+            }
+            if (lang == "IsiXhosa") {
+
+                return "Molo " + name;
+            } else if (lang == "Afrikaans") {
+
+                return 'Hallo ' + name;
+            }
+           
+        
+
         }
+        
+    }
 
-     function counter(){
-            count = Object.keys()
-                return count.length
-            
-        }
+   
+    function myButton() {
+        names = {};
+        localStorage.clear('greetNames');
+        // location.reset();
 
     }
+
 
 
     return {
         AddName,
-        setName,
-        getName,
+         setName,
+        getNames,
         language,
-        counter
+         counter,
+         myButton
     };
 }
