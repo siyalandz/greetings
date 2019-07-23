@@ -1,45 +1,38 @@
-describe('function greetFactory',function() {
-            it('should be able to get the greeted name',function() {
-                let object = greetFactory();
-                object.AddName('Siya');
-
-                assert.equal('Siya',object.getName())
-            })
-            it('should be able to set the name',function(){
-                let object1 = greetFactory();
-                object1.AddName('siya');
-
-                assert.equal('siya',object1.getName())
-            })
-            
-            
+describe('function greetFactory', function () {
+    let object = greetFactory();
+    it('should be able to greet name in English', function () {
         
-        it('should be able to get the name', function(){
-            let object2 = greetFactory();
-            object2.AddName('Siya')
-            assert.equal('Siya',object2.getName())
-        })
-        it('should return the Hello word when greeted in English', function(){
-            let object3 = greetFactory();
-            object3.AddName('Hello')
-            assert.equal('Hello',object3.getName())
-        })
-        it('should return the Molo word when greeted in Xhosa', function(){
-            let object4 = greetFactory();
-            object4.AddName('Molo')
-            assert.equal('Molo',object4.getName())
-        })
-        it('should return the Hallo word when greeted in Afrikaans', function(){
-            let object4 = greetFactory();
-            object4.AddName('Hallo')
-            assert.equal('Hallo',object4.getName())
-        })
+     var result=   object.language('Siya','English');
 
-        it('should count how many people greeted'), function(){
-            let object5 = greetFactory();
-            object5.counter('siya, sino. vovo,Loyd')
-            assert.equal('4',object5.getName())
-        }
+        assert.equal('Hello Siya', result)
+    })
+    it('should be able to greet name in Xhosa', function () {
+        
+        var result=   object.language('Siya','IsiXhosa');
+   
+           assert.equal('Molo Siya', result)
+       })
+       it('should be able to greet name in Afrikaans', function () {
+        
+        var result=   object.language('Siya','Afrikaans');
+   
+           assert.equal('Hallo Siya', result)
+       })
+    it('should be able to count the 1st person greeted',function(){
+        assert.equal(1,object.getGreetedNames());
+    })
+      it('should be able to count the 5 people greeted',function(){
+        let object1 = greetFactory();
+
+        object1.language('Siya','IsiXhosa');
+        object1.language('AYA','english');
+        object1.language('MAKO','IsiXhosa');
+        object1.language('VOVO','Afrikaans');
+        object1.language('MGOLI','IsiXhosa');
+    })
+    
 })
+
+
 
     

@@ -3,49 +3,39 @@ function greetFactory(usersGreeted) {
 
 
     let names = usersGreeted || {};
-    counter = 0;
-
-    function AddName(name) {
-        names.push(name);
-     }
-
-     function setName() {
-
-     }
 
     function getNames() {
         return names;
     }
 
-
+    function getGreetedNames() {
+        return Object.keys(names).length;
+    }
 
     function language(name, lang) {
-        //  var MyName= name.chart(0).MyName()+ name.slice(1)
+        var MyName = name.toUpperCase().charAt(0) + name.slice(1)
         if (name !== '') {
             if (names[name] === undefined) {
-                names[name] = 0;
-            }else{
+                names[name] = 1;
+            } else {
                 names[name]++;
             }
 
             if (lang == "English") {
-                return "Hello " + name;
+                return "Hello " + MyName;
             }
             if (lang == "IsiXhosa") {
 
-                return "Molo " + name;
+                return "Molo " + MyName;
             } else if (lang == "Afrikaans") {
 
-                return 'Hallo ' + name;
+                return 'Hallo ' + MyName;
             }
-           
-        
-
         }
-        
+
     }
 
-   
+
     function myButton() {
         names = {};
         localStorage.clear('greetNames');
@@ -56,11 +46,12 @@ function greetFactory(usersGreeted) {
 
 
     return {
-        AddName,
-         setName,
+
+
         getNames,
         language,
-         counter,
-         myButton
+        
+        myButton,
+        getGreetedNames
     };
 }
