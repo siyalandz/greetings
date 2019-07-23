@@ -30,9 +30,13 @@ describe('function greetFactory', function () {
         object1.language('VOVO','Afrikaans');
         object1.language('MGOLI','IsiXhosa');
     })
-    
+    it('should be able to return empty string when no name greeted',function(){
+        let object1 = greetFactory();
+        object1.language('');
+        
+
 })
-
-
+}
+)
 
     
