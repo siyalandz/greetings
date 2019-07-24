@@ -23,10 +23,7 @@ function textBtnClicked() {
     if(userName.value == "" || !isNaN(userName.value)) {
         rb.innerHTML = "please enter name"
         return false;
-        
-    }
-
-
+         }
     var lang = document.querySelector("input[name = 'myRadio']:checked");
     var language = lang.value;
     var name = userName.value
@@ -55,11 +52,6 @@ function bulisa(userName) {
     } else if (namesGreeted[userName] !== undefined) {
         namesGreeted[userName] = namesGreeted[userName] + 1;
     } else (userName.value  == undefined)
-
-
-    
-
-    
 
     rb.innerHTML = userName + " have been greeted " + namesGreeted[userName] + " time(s)";
     rc.innerHTML = greetingsCounter // namesGreeted[userName];

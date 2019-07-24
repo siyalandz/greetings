@@ -35,19 +35,13 @@ function greetFactory(usersGreeted) {
         }else {MyNaam === '' ;
             return "please enter name or language";
         }
-
-
     }
-
-
     function myButton() {
         names = {};
         localStorage.clear('greetNames');
         // location.reset();
 
     }
-
-
 
     return {
 
