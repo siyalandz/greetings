@@ -32,6 +32,8 @@ function greetFactory(usersGreeted) {
 
                 return 'Hallo ' + MyNaam;
             }
+        }else {MyNaam === '' ;
+            return "please enter name or language";
         }
 
 

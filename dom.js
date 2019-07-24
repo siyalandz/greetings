@@ -21,9 +21,12 @@ var greetingsCounter = 0;
 function textBtnClicked() {
     var userName = document.querySelector(".userName"); 
     if(userName.value == "" || !isNaN(userName.value)) {
+        rb.innerHTML = "please enter name"
         return false;
         
     }
+
+
     var lang = document.querySelector("input[name = 'myRadio']:checked");
     var language = lang.value;
     var name = userName.value
@@ -43,6 +46,7 @@ function bulisa(userName) {
     var MyName = name.toLowerCase();
     var userName = MyName.toUpperCase().charAt(0) + MyName.slice(1)
 
+   
     if (namesGreeted[userName] === undefined) {
         greetingsCounter++;
 
