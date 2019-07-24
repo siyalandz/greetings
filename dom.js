@@ -22,20 +22,11 @@ function textBtnClicked() {
     var userName = document.querySelector(".userName"); 
     if(userName.value == "" || !isNaN(userName.value)) {
         return false;
-    } 
-    else if(userName.value == "" || !isNaN(userName.value))
-    {
-         return true;
+        
     }
-    
-
-   
     var lang = document.querySelector("input[name = 'myRadio']:checked");
     var language = lang.value;
-    var name = userName.value;
-
-
-    
+    var name = userName.value
 
     var greetingsOfgreet = greetFactoryFunction.language(name, language);
     localStorage.setItem('greetNames', JSON.stringify(greetFactoryFunction.getNames()));
@@ -49,6 +40,8 @@ function textBtnClicked() {
 var namesGreeted = {};
 
 function bulisa(userName) {
+    var MyName = name.toLowerCase();
+    var userName = MyName.toUpperCase().charAt(0) + MyName.slice(1)
 
     if (namesGreeted[userName] === undefined) {
         greetingsCounter++;
@@ -58,6 +51,8 @@ function bulisa(userName) {
     } else if (namesGreeted[userName] !== undefined) {
         namesGreeted[userName] = namesGreeted[userName] + 1;
     } else (userName.value  == undefined)
+
+
     
 
     
@@ -70,6 +65,7 @@ function myReset() {
     localStorage.clear();
     window.location.reload();
 }
+
 
 buttonElem.addEventListener('click', textBtnClicked)
 resetButtonElem.addEventListener('click', myReset)

@@ -12,8 +12,9 @@ function greetFactory(usersGreeted) {
         return Object.keys(names).length;
     }
 
-    function language(name, lang) {
-        var MyName = name.toUpperCase().charAt(0) + name.slice(1)
+    function language(name, lang) {   
+        var MyName = name.toLowerCase();
+        var MyNaam = MyName.toUpperCase().charAt(0) + MyName.slice(1)
         if (name !== '') {
             if (names[name] === undefined) {
                 names[name] = 1;
@@ -22,16 +23,17 @@ function greetFactory(usersGreeted) {
             }
 
             if (lang == "English") {
-                return "Hello " + MyName;
+                return "Hello " + MyNaam;
             }
             if (lang == "IsiXhosa") {
 
-                return "Molo " + MyName;
+                return "Molo " + MyNaam;
             } else if (lang == "Afrikaans") {
 
-                return 'Hallo ' + MyName;
+                return 'Hallo ' + MyNaam;
             }
         }
+
 
     }
 
@@ -50,7 +52,6 @@ function greetFactory(usersGreeted) {
 
         getNames,
         language,
-        
         myButton,
         getGreetedNames
     };
